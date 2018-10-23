@@ -25,7 +25,7 @@ void MakeMatrixAdj(vector<pair<int,int> > gr, int** matrix){
   }
 
 //ВЫЧИСЛЕНИЕ КОЛИЧЕСТВА КОМПОНЕНТ СВЯЗНОСТИ
-int number_of_con_com(int* used){
+int NumConCom(int* used){
     int temp = 1;
     for(int j = 0; j < v; j++){
         if(used[j] == 0){
