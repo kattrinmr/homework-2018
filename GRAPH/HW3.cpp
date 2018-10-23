@@ -24,17 +24,6 @@ void MakeMatrixAdj(vector<pair<int,int> > gr, int** matrix){
         }
   }
 
-//ВЫЧИСЛЕНИЕ КОЛИЧЕСТВА КОМПОНЕНТ СВЯЗНОСТИ
-int NumConCom(int* used){
-    int temp = 1;
-    for(int j = 0; j < v; j++){
-        if(used[j] == 0){
-            dfs(j, used);
-            temp++;
-        }
-    }
-    return temp;
-}
 //ПРОВЕРКА СУЩЕСТВОВАНИЯ ПУТИ
 bool way(int x, int y, int* used){
     used[x-1] = 1;
