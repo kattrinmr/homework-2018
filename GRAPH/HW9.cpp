@@ -9,7 +9,7 @@ using namespace std;
 int n; //число вершин
 vector < vector < int > > g; // список смежности
 vector <bool> cutpoint;  // true если шарнир
-vector <bool> bridge;  // true если мост
+vector < pair<int,int> > bridge;  // true если мост
 vector <bool> used;
 vector <int> tin;   // время входа в вершину i
 vector <int> fup;   // Время fup[v] равно минимуму из времени захода в саму вершину
@@ -56,7 +56,7 @@ void Bridges(int v, int p = -1) { //p - parent. p = -1 если dfs из кор�
 			Bridges(to, v);
 			fup[v] = min (fup[v], fup[to]);
 			if (fup[to] > tin[v] ) 
-				bridge[v]= true;
+				bridge.push_back(make_pair(v, to);
 		}
 	}
 }
