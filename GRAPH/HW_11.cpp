@@ -9,7 +9,7 @@ using namespace std;
 	vector<int> used;
 
 
-bool try_kuhn (int v, int from) {
+bool try_kuhn (int v) {
 	cout << "start "<< "v = "<< v << " used[v]="<<used[v] << endl;
 	if (used[v]){	//Если уже посещённая
 	  cout << "return false (used)" << endl;
@@ -20,10 +20,9 @@ bool try_kuhn (int v, int from) {
 		int to = g[v][i]; //В какую вершину 
 		cout << "i="<< i << " to = " << to << "   mt[to]=" << mt[to] << endl;
 	
-		if(to == from){
+		/*if(to == from){
 			cout << "continue to == from"<< endl;
-			continue;
-		}
+			continue;}*/
 	
 		if (mt[to] == -1 || try_kuhn( mt[to],to )) { //если не связаны или try_kuhn(mt[to], to)
 			cout << " Change mt[to]: to = " << to << " v=" << v << endl;
