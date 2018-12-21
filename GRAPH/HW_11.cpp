@@ -9,7 +9,7 @@ using namespace std;
 	vector<int> used;
 
 
-bool try_kuhn (int v) {
+bool try_kuhn (int v) { //g - размер сколько в левой доли, N
 	cout << "start "<< "v = "<< v << " used[v]="<<used[v] << endl;
 	if (used[v]){	//Если уже посещённая
 	  cout << "return false (used)" << endl;
@@ -24,7 +24,7 @@ bool try_kuhn (int v) {
 			cout << "continue to == from"<< endl;
 			continue;}*/
 	
-		if (mt[to] == -1 || try_kuhn( mt[to],to )) { //если не связаны или try_kuhn(mt[to], to)
+		if (mt[to] == -1 || try_kuhn( mt[to] )) { //если не связаны или с левой вершины на которую ссылается mt[to] try_kuhn(mt[to])
 			cout << " Change mt[to]: to = " << to << " v=" << v << endl;
 			mt[to] = v;
 			cout << "return true (change)" << endl;
